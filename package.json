@@ -4,7 +4,6 @@
   "description": "",
   "main": "scr/server.ts",
   "scripts": {
-    "build": "tsc",
     "start": "node build/src/server.js",
     "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
