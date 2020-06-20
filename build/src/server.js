@@ -10,7 +10,7 @@ var routes_1 = __importDefault(require("./routes"));
 var connection_1 = __importDefault(require("./database/connection"));
 var config = require('../knexfile');
 var app = express_1.default();
-app.use(cors_1.default());
+app.use(cors_1.default({ origin: 'http://https://needu-frontend.herokuapp.com' }));
 app.use(express_1.default.json());
 app.use(routes_1.default);
 app.use('/uploads', express_1.default.static(path_1.default.resolve(__dirname, '..', 'uploads')));
