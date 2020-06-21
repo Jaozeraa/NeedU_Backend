@@ -10,17 +10,13 @@ const config = require('../knexfile');
 
 const app = express();
 
-var corsOptions = {
-  origin: 'http://needu-frontend.herokuapp.com',
-  optionsSuccessStatus: 200
-}
-
+app.use(cors())
 
 app.use(express.json());
 
 app.use(routes);
 
-app.use('/uploads', cors(corsOptions), express.static(path.resolve(__dirname, '..', 'uploads')));
+app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
 
 const configMigrations: MigratorConfig = {
   directory: config.migrations.directory,
