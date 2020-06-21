@@ -10,7 +10,12 @@ const config = require('../knexfile');
 
 const app = express();
 
-app.use(cors());
+var corsOptions = {
+  origin: 'http://needu-frontend.herokuapp.com',
+  optionsSuccessStatus: 200
+}
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
